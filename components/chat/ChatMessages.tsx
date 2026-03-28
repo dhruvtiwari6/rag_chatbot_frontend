@@ -56,6 +56,9 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { MessageBubble } from './MessageBubble'
 import { TypingIndicator } from './TypingIndicator'
 import { EmptyState } from './EmptyState'
+import { useChat } from '@/contexts/ChatContext'
+import { Skeleton } from '@/components/ui/skeleton'
+import { Sparkles } from 'lucide-react'
 
 export function ChatMessages() {
   const { messages, currentThreadId, isLoading, isSending } = useChat()
