@@ -124,6 +124,9 @@ export async function uploadPDF(
   formData.append('file', file)
   formData.append('thread_id', threadId)
 
+
+  console.log("pdf uplodation with thread id : ", threadId);
+
   const { data } = await api.post<{ status: string; chunks_added: number; thread_id: string }>(
     '/upload-pdf',
     formData,
