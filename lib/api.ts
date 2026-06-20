@@ -1,4 +1,6 @@
 import axios, { AxiosError, AxiosProgressEvent } from 'axios'
+import { useChat } from '@/contexts/ChatContext'
+
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'
 
@@ -87,9 +89,11 @@ export async function sendMessage(
   thread_id: string
 ): Promise<{ response: string; thread_id: string }> {
   console.log("sending over to chat with id :", thread_id);
+  const {currentThreadId} = useChat()
+  
   const { data } = await api.post<{ response: string; thread_id: string }>('/chat', {
     message,
-    thread_id: thread_id,
+    thread_id: currentThreadId,
   })
   return data
 }
