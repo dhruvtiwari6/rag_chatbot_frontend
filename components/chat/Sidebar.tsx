@@ -48,6 +48,7 @@ export function Sidebar() {
 
   const handleSelectThread = async (threadId: string) => {
     await selectThread(threadId)
+    console.log("thread_id :", currentThreadId);
     closeSidebar()
   }
 
