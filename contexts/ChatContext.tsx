@@ -198,7 +198,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     setError(null)
 
     try {
-      const response = await api.sendMessage(content.trim(), user.id)
+      const response = await api.sendMessage(content.trim(), currentThreadId!)
       
       // Backend returns thread_id - use it to update state
       const threadId = response.thread_id
