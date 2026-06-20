@@ -87,7 +87,7 @@ export async function sendMessage(
 ): Promise<{ response: string; thread_id: string }> {
   const { data } = await api.post<{ response: string; thread_id: string }>('/chat', {
     message,
-    user_id: userId,
+    thread_id: thread_id,
   })
   return data
 }
