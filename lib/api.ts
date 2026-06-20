@@ -86,6 +86,7 @@ export async function sendMessage(
   message: string,
   thread_id: string
 ): Promise<{ response: string; thread_id: string }> {
+  console.log("sending over to chat with id :", thread_id);
   const { data } = await api.post<{ response: string; thread_id: string }>('/chat', {
     message,
     thread_id: thread_id,
