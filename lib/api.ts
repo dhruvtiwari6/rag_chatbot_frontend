@@ -83,7 +83,7 @@ export async function getUserThreads(userId: string): Promise<{ user_id: string;
  */
 export async function sendMessage(
   message: string,
-  userId: string
+  thread_id: string
 ): Promise<{ response: string; thread_id: string }> {
   const { data } = await api.post<{ response: string; thread_id: string }>('/chat', {
     message,
