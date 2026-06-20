@@ -60,6 +60,7 @@ export async function createThread(userId: string): Promise<{ thread_id: string 
     '/threads',
     { user_id: userId }
   )
+  console.log("thread_id is : ", thread_id);
   return data
 }
 
